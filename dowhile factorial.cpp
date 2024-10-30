@@ -16,11 +16,12 @@ int main()
 		i=1;
 		do{
 	factorial*=i;
-	cout<<"factorial of a number"<<factorial<<'='<<n<<'*'<<i<<endl;
 	i++;
 		}
 		while(i<=n);
+		{
+		cout<<"factorial of a number"<<factorial<<'='<<n<<'*'<<i<<endl;
 	}
-
+	}
  return 0;
 }
