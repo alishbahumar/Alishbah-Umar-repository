@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Define the StudentGrading structure
+struct StudentGrading {
+    string name;
+    string sapID;
+    string address;
+    string department;
+    int marks[2];  // Array to store marks for two subjects
+
+    // Function to calculate the maximum marks for the student
+    int calculateMaxMarks() {
+        return (marks[0] > marks[1]) ? marks[0] : marks[1];
+    }
+};
+
+int main() {
+    // Array to hold information for 5 students
+    StudentGrading students[5];
+
+    // Input details for each student
+    for (int i = 0; i < 5; ++i) {
+        cout << "Enter details for student " << i + 1 << ":\n";
+        
+        cout << "Name: ";
+        getline(cin, students[i].name);  // To allow spaces in the name
+
+        cout << "SAP ID: ";
+        getline(cin, students[i].sapID);  // To allow spaces in SAP ID
+
+        cout << "Address: ";
+        getline(cin, students[i].address);  // To allow spaces in address
+
+        cout << "Department: ";
+        getline(cin, students[i].department);  // To allow spaces in department
+
+        cout << "Marks for Subject 1: ";
+        cin >> students[i].marks[0];  // Input marks for subject 1
+
+        cout << "Marks for Subject 2: ";
+        cin >> students[i].marks[1];  // Input marks for subject 2
+
+        cin.ignore();  // To ignore the newline character left in the buffer after numeric input
+        cout << endl;
+    }
+
+    // Display details of all students
+    cout << "\nStudent Details:\n";
+    for (int i = 0; i < 5; ++i) {
+        cout << "Student " << i + 1 << ":\n";
+        cout << "Name: " << students[i].name << endl;
+        cout << "SAP ID: " << students[i].sapID << endl;
+        cout << "Address: " << students[i].address << endl;
+        cout << "Department: " << students[i].department << endl;
+        cout << "Marks in Subject 1: " << students[i].marks[0] << endl;
+        cout << "Marks in Subject 2: " << students[i].marks[1] << endl;
+        cout << "Maximum Marks: " << students[i].calculateMaxMarks() << endl;  // Display max marks
+        cout << endl;
+    }
+
+    return 0;
+}
