@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Define the User structure
+struct User {
+    string name;  // Member variable to store the username
+};
+
+int main() {
+    // Create an instance of User structure
+    User user;
+    string enteredUsername;
+    string correctUsername = "user123";  // Hardcoded username for login simulation
+
+    // Prompt the user to enter their username
+    cout << "Enter your username: ";
+    getline(cin, enteredUsername);
+
+    // Simulate the login process (just a simple check here)
+    if (enteredUsername == correctUsername) {
+        // Store the username in the User structure
+        user.name = enteredUsername;
+
+        // Display personalized welcome message
+        cout << "Welcome, " << user.name << "!" << endl;
+    } else {
+        // If login fails
+        cout << "Incorrect username. Please try again." << endl;
+    }
+    return 0;
+}
